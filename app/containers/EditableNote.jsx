@@ -12,23 +12,28 @@ class EditableNote extends React.Component {
 
 
     saveNote() {
-        this.props.dispatch(actions.saveNote(this.props.note));
+
+        const value = this.props.note.value.trim();
+        if (value !== '')
+            this.props.dispatch(actions.saveNote(this.props.note));
     }
 
 
     render() {
-        return (
-            <div>
+
+        if (this.props.note.focus)
+            return (
+                <div>
                 <textarea placeholder="Whats on yout mind?"
                           name="note"
                           cols="35"
                           rows="20"
                           onChange={this.noteContentChanged.bind(this)}/>
-                <Button name="Create" onClick={this.saveNote.bind(this)}/>
-                <Button name="Cancel"/>
-            </div>
-
-        )
+                    <Button name="Create" onClick={this.saveNote.bind(this)}/>
+                    <Button name="Cancel"/>
+                </div>
+            );
+        else return null;
     }
 }
 
@@ -37,6 +42,6 @@ function mapper(state) {
     return {note: state.newNote};
 }
 
-EditableNote.defaultProps = {}
+EditableNote.defaultProps = {};
 
 export default connect(mapper)(EditableNote);

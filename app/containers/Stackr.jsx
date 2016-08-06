@@ -1,6 +1,6 @@
 import React from 'react';
 import {connect} from 'react-redux';
-import  Note from '../containers/Note';
+import  Note from './EditableNote';
 import Button from '../components/Button';
 
 class Stackr extends React.Component {
@@ -9,7 +9,7 @@ class Stackr extends React.Component {
         return (
             <div>
                 <Note />
-                <Button name="Add new Note"/>
+                <Button onClick={() => console.log('new button')} name="Add new Note"/>
 
             </div>
         );

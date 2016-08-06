@@ -1,11 +1,10 @@
 import {combineReducers} from 'redux';
-import note from './note';
-
-
+import {newNote, notes} from './note';
 
 
 const rootReducer = combineReducers({
-    note
+    notes,
+    newNote
 });
 
 export default rootReducer;

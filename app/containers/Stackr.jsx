@@ -17,10 +17,9 @@ class Stackr extends React.Component {
     render() {
         return (
             <div className="stackr-main">
-                <Note />
                 <Notes/>
-                <Button onClick={this.addNewNote.bind(this)} name="+"/>
-            </div>
+                <Note />
+                </div>
         );
     }
 }

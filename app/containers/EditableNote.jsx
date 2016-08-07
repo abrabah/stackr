@@ -18,10 +18,7 @@ class EditableNote extends React.Component {
         if (value !== '')
             this.props.dispatch(actions.saveNote(this.props.note));
     }
-
-    cancel() {
-        this.props.dispatch(actions.cancelAddNewNote());
-    }
+    
 
     setFocus(input){
         if(input != null)
@@ -30,21 +27,17 @@ class EditableNote extends React.Component {
 
 
     render() {
-
-        if (this.props.note.focus)
             return (
-                <div>
+                <div className="newNote">
                 <textarea ref={this.setFocus} placeholder="Whats on yout mind?"
                           name="note"
-                          cols="35"
-                          rows="20"
+                          rows="2"
+
                           value={this.props.note.value}
                           onChange={this.noteContentChanged.bind(this)}/>
                     <Button name="Create" onClick={this.saveNote.bind(this)}/>
-                    <Button name="Cancel" onClick={this.cancel.bind(this)}/>
                 </div>
             );
-        else return null;
     }
 }
 

@@ -16,11 +16,10 @@ body,html{
 
 
 .stackr-main{
-  flex-direction: row;
-  justify-content: flex-end;
+  flex-direction: column;
   display: flex;
+  width: 30em;
   align-items: flex-start;
-  width: auto;
 
  > button{
    vertical-align: center;

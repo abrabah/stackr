@@ -21,8 +21,9 @@ class Note extends React.Component {
             <div className="note" style={{background:this.props.note.background}}>
                 <section className="note-text">{this.props.note.value}</section>
                 <section className="note-button-row">
-                <Button name="Postpone" onClick={this.postpone.bind(this)}/>
-                <Button name="Remove" onClick={this.remove.bind(this)}/>
+                    <Button name="Postpone" onClick={this.postpone.bind(this)}/>
+                    <div className="separator"/>
+                    <Button name="Remove" onClick={this.remove.bind(this)}/>
                 </section>
             </div>
 

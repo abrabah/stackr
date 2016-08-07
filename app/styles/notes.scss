@@ -1,17 +1,21 @@
 
 .notes {
   position: relative;
-  width: 22em;
-  height: 32em;
+  width: 20em;
+  height: 30em;
   display: block;
+  margin-right: 5px;
 }
 
 .note {
-  padding: 0.3em;
-  width: 20em;
-  height: 30em;
+  //padding: 0.3em;
+
+  width: 19em;
+  height: 29em;
+  padding: 0.5em;
   display: flex;
   position: absolute;
+  z-index: 5;
 
   .note-text {
     color: whitesmoke;
@@ -35,10 +39,10 @@
 
 }
 
-@for $i from 0 through 5 {
+@for $i from 1 through 5 {
   .note:nth-child(#{$i}) {
-    bottom: $i*2%;
-    right: $i*2%;
+    bottom: ($i - 1)*1em;
+    right: ($i - 1)*1em;
     z-index: 6 - $i;
   }
 

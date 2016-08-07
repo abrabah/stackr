@@ -5,6 +5,7 @@ export const SAVE_NOTE = 'SAVE_NOTE';
 export const ADD_NEW_NOTE = 'ADD_NEW_NOTE';
 export const CANCEL_ADD_NEW_NOTE = 'CANCEL_ADD_NEW_NOTE';
 
+
 export function noteValueChanged(value) {
     return {
         type: NOTE_CHANGE,

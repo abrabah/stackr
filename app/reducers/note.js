@@ -25,17 +25,33 @@ export function newNote(state = {
 }
 
 
-export function notes(state = [], action) {
+export function notes(state = getNotesFromLocalStorage(), action) {
 
     switch (action.type) {
 
     case actions.SAVE_NOTE:
-        return [...state, action.note];
+    {
+        const notes = [...state, action.note];
+        saveNotesToLocalStorate(notes);
+        return notes;
+    }
     case actions.REMOVE_NOTE:
-        return state.filter(elm => elm !== action.note);
+    {
+        const notes = state.filter(elm => elm !== action.note);
+        saveNotesToLocalStorate(notes);
+        return notes;
+    }
     default:
         return state;
     }
 }
 
+const STACKR_NOTES = 'stackr_notes';
 
+function getNotesFromLocalStorage() {
+    return JSON.parse(localStorage.getItem(STACKR_NOTES) || '[]');
+}
+
+function saveNotesToLocalStorate(notes) {
+    localStorage.setItem(STACKR_NOTES, JSON.stringify(notes));
+}

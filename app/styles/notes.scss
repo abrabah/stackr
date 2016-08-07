@@ -1,13 +1,11 @@
 
-
-.newNote{
+.newNote {
   width: 100%;
   display: flex;
   flex-direction: row;
 
-  textarea{
+  textarea {
     font-size: 2em;
-    border: 3px solid #cccccc;
     padding: 5px;
     font-family: Tahoma, sans-serif;
     background: white;
@@ -18,24 +16,27 @@
   }
 }
 
+
+
 .notes {
   position: relative;
   width: 100%;
   height: 15em;
   display: block;
+  margin-bottom: 1em;
 }
 
 .note {
-  //padding: 0.3em;
 
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 25px 50px 0 rgba(0, 0, 0, 0.1);
   width: 100%;
   height: 15em;
   display: flex;
   position: absolute;
   z-index: 5;
 
-  &:first-child:hover{
-    .note-button-row{
+  &:first-child:hover {
+    .note-button-row {
       visibility: visible;
     }
   }
@@ -57,10 +58,11 @@
     display: flex;
     flex-direction: row;
 
-    .separator{
+    .separator {
       width: 5px;
       height: 100%;
       background: black;
+
     }
 
     button {

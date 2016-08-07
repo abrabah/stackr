@@ -3,6 +3,7 @@ export const REMOVE_NOTE = 'REMOVE_NOTE';
 export const NOTE_CHANGE = 'NOTE_CHANGE';
 export const SAVE_NOTE = 'SAVE_NOTE';
 export const ADD_NEW_NOTE = 'ADD_NEW_NOTE';
+export const CANCEL_ADD_NEW_NOTE = 'CANCEL_ADD_NEW_NOTE';
 
 export function noteValueChanged(value) {
     return {
@@ -13,6 +14,10 @@ export function noteValueChanged(value) {
 
 export function addNewNote() {
     return {type: ADD_NEW_NOTE};
+}
+
+export function cancelAddNewNote() {
+    return {type: CANCEL_ADD_NEW_NOTE};
 }
 
 export function removeNote(note) {

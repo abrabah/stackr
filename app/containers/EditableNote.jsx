@@ -18,6 +18,10 @@ class EditableNote extends React.Component {
             this.props.dispatch(actions.saveNote(this.props.note));
     }
 
+    cancel() {
+        this.props.dispatch(actions.cancelAddNewNote());
+    }
+
 
     render() {
 
@@ -30,7 +34,7 @@ class EditableNote extends React.Component {
                           rows="20"
                           onChange={this.noteContentChanged.bind(this)}/>
                     <Button name="Create" onClick={this.saveNote.bind(this)}/>
-                    <Button name="Cancel"/>
+                    <Button name="Cancel" onClick={this.cancel.bind(this)}/>
                 </div>
             );
         else return null;

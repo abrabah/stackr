@@ -1,6 +1,6 @@
 import React from 'react';
 import {connect} from 'react-redux';
-import  Note from './EditableNote';
+import  Note from './NewNote';
 import Notes from './Notes';
 import Button from '../components/Button';
 import * as actions from '../actions/note';
@@ -26,7 +26,7 @@ class Stackr extends React.Component {
 
 
 function mapper(state) {
-    return {};
+    return {};  
 }
 
 export default connect(mapper)(Stackr);

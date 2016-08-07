@@ -49,29 +49,16 @@
   }
 
   .note-button-row {
-    background: rgba(255, 255, 255, 0.51);
     visibility: hidden;
-    height: 20%;
-    width: 100%;
+    height: auto;
+    width: auto;
     position: absolute;
     bottom: 0;
+    right: 0;
     display: flex;
     flex-direction: row;
 
-    .separator {
-      width: 5px;
-      height: 100%;
-      background: black;
 
-    }
-
-    button {
-      height: 100%;
-      flex: 1;
-      border: none;
-      background: none;
-      font-size: 1.2em;
-    }
 
   }
 

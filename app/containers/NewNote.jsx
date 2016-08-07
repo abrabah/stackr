@@ -1,7 +1,5 @@
 import React from 'react';
-import ReactDom from 'react-dom';
 import {connect} from 'react-redux';
-import Button from '../components/Button';
 import *  as actions from '../actions/note';
 
 
@@ -20,23 +18,25 @@ class EditableNote extends React.Component {
     }
 
 
-    setFocus(input){
-        if(input != null)
+    setFocus(input) {
+        if (input != null)
             input.focus();
     }
 
 
     render() {
-            return (
-                <div className="newNote">
-                <textarea ref={this.setFocus} placeholder="Whats on yout mind?"
+        return (
+            <div className="newNote">
+                <textarea ref={this.setFocus} placeholder="What to do?"
                           name="note"
                           rows="2"
                           value={this.props.note.value}
                           onChange={this.noteContentChanged.bind(this)}/>
-                    <Button name="Create" onClick={this.saveNote.bind(this)}/>
-                </div>
-            );
+                <button onClick={this.saveNote.bind(this)}>
+                    <i className="material-icons md-large md-light">add_circle_outline</i>
+                </button>
+            </div>
+        );
     }
 }
 

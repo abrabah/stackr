@@ -1,7 +1,7 @@
 import * as actions from '../actions/note';
 
 
-const backgroundColors = ['#DA4891', '#7ABC5E', '#F1E41A', '#F0633F', '#7F366F'];
+const backgroundColors = ['#DA4891', '#7ABC5E', '#ccc456', '#F0633F', '#7F366F'];
 
 export function newNote(state = {
     value: '',

@@ -36,8 +36,22 @@ button {
   font-size: 1.5em;
 }
 
+.stackr-placeholder{
+  position: absolute;
+  top:10%;
+  margin: 0 auto;
+  font-size: 9em;
+  width: 100%;
+  color: #746a6a;
+  font-weight: bold;
+  //text-shadow: 1px 1px 0px rgba(140, 140, 140, 0.6), -1px -1px 1px rgba(171, 161, 161, 0.67);
+}
+
+
+
 .stackr-main{
   flex-direction: column;
+  position: relative;
   display: flex;
   width: 30em;
   align-items: flex-start;

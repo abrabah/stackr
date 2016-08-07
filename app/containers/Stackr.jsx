@@ -5,19 +5,21 @@ import Notes from './Notes';
 import Button from '../components/Button';
 import * as actions from '../actions/note';
 
+import '../styles/stackr.scss';
+
 class Stackr extends React.Component {
 
 
-    addNewNote(){
+    addNewNote() {
         this.props.dispatch(actions.addNewNote());
     }
 
     render() {
         return (
-            <div>
+            <div className="stackr-main">
                 <Note />
                 <Notes/>
-                <Button onClick={this.addNewNote.bind(this)} name="Add new Note"/>
+                <Button onClick={this.addNewNote.bind(this)} name="+"/>
             </div>
         );
     }

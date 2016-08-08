@@ -9,7 +9,7 @@ var StatsPlugin = require('stats-webpack-plugin');
 module.exports = {
     // The entry file. All your app roots fromn here.
     entry: [
-        path.join(__dirname, 'app/index.dev.jsx')
+        path.join(__dirname, 'app/index.prod.jsx')
     ],
     // Where you want the output to go
     output: {
@@ -52,42 +52,41 @@ module.exports = {
             'process.env.NODE_ENV': JSON.stringify('production')
         })
     ],
-
-    // ESLint options
-    eslint: {
-        configFile: '.eslintrc',
-        failOnWarning: false,
-        failOnError: true
+    resolve: {
+        extensions: ['', '.js', '.jsx']
     },
-
     module: {
         // Runs before loaders
-        preLoaders: [
-            {
-                test: /\.js$/,
-                exclude: /node_modules/,
-                loader: 'eslint'
-            }
-        ],
+        preLoaders: [],
         // loaders handle the assets, like transforming sass to css or jsx to js.
-        loaders: [{
-            test: /\.js?$/,
-            exclude: /node_modules/,
-            loader: 'babel'
-        }, {
-            test: /\.json?$/,
-            loader: 'json'
-        }, {
+        loaders: [
+
+            {
+                test: /\.jsx?$/,
+                exclude: /node_modules/,
+                loaders: ['babel']
+
+            },
+            {
+                test: /\.json?$/,
+                loader: 'json'
+            },
+            {
+                test: /\.woff(2)?(\?v=[0-9]\.[0-9]\.[0-9])?$/,
+                loader: "url-loader?limit=10000&minetype=application/font-woff"
+            },
+            {test: /\.(ttf|eot|svg)(\?v=[0-9]\.[0-9]\.[0-9])?$/, 
+	       loader: "file-loader"
+	    },
+	    {
             test: /\.scss$/,
             // we extract the styles into their own .css file instead of having
             // them inside the js.
             loader: ExtractTextPlugin.extract('style', 'css!postcss!sass')
-        },{
+	    },
+	       {
             test: /\.woff(2)?(\?v=[0-9]\.[0-9]\.[0-9])?$/,
             loader: "url-loader?limit=10000&minetype=application/font-woff"
-        },{
-            test: /\.(ttf|eot|svg)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
-            loader: "file-loader"
         }]
     },
     postcss: [

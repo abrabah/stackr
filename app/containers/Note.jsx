@@ -12,7 +12,7 @@ class Note extends React.Component {
     }
 
     postpone() {
-
+        this.props.dispatch(actions.postponeNote(this.props.note));
     }
 
     render() {

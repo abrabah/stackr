@@ -13,6 +13,11 @@ export function noteValueChanged(value) {
     };
 }
 
+export function postponeNote(note) {
+    return {type: POSTPONE_NOTE,
+    note};
+}
+
 export function addNewNote() {
     return {type: ADD_NEW_NOTE};
 }

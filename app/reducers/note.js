@@ -41,12 +41,20 @@ export function notes(state = getNotesFromLocalStorage(), action) {
         saveNotesToLocalStorate(notes);
         return notes;
     }
+    case actions.POSTPONE_NOTE:
+        return postponeNote(state,action.note);
     default:
         return state;
     }
 }
 
 const STACKR_NOTES = 'stackr_notes';
+
+function postponeNote(notes,note) {
+    const newNoteList = notes.filter(elm => elm !== note);
+    newNoteList.push(note);
+    return newNoteList;
+}
 
 function getNotesFromLocalStorage() {
     return JSON.parse(localStorage.getItem(STACKR_NOTES) || '[]');

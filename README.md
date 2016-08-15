@@ -1,3 +1,3 @@
 #Stackr
 
-A simple todo app.
+A simple todo app. (demo)[http://abrabah.no/stackr]
